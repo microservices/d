@@ -8,7 +8,4 @@ RUN dub build -b release
 
 FROM busybox
 COPY --from=builder /src/d-template /app
-RUN chmod +x /app
-WORKDIR /src
-EXPOSE 8080
 ENTRYPOINT [ "/app" ]
