@@ -1,0 +1,12 @@
+name "d-template"
+description "Template for an OMG microservice in D"
+authors "Microservices"
+copyright "Copyright © 2019, Microservices"
+license "MIT"
+dependency "vibe-d" version="~>0.8.5"
+
+configuration "release" {
+	targetType "executable"
+	buildType "releaseMode" platform="posix-ldc"
+	dflags "-flto=full" "-linker=gold" "-O5" "-static" platform="posix-ldc"
+}
