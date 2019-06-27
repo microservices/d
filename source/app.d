@@ -37,6 +37,9 @@ void main()
         res.writeJsonBody(errorResponse, error.code);
     };
     auto router = new URLRouter;
+    router.get("/health", (req, res) {
+        res.writeBody("OK");
+    });
     router.registerRestInterface(new UserService());
     listenHTTP(settings, router);
 
